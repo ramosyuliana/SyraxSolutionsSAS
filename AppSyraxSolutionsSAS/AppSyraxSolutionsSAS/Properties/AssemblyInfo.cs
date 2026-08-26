@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada a un ensamblado.
-[assembly: AssemblyTitle("AppDonaPet")]
+[assembly: AssemblyTitle("AppSyraxSolutionsSAS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AppDonaPet")]
+[assembly: AssemblyProduct("AppSyraxSolutionsSAS")]
 [assembly: AssemblyCopyright("Copyright ©  2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como ID de typelib si este proyecto se expone a COM
-[assembly: Guid("a7aab0a3-5da4-4ecf-85a8-cfb876b38861")]
+[assembly: Guid("99b233a2-e1f2-44ad-bd72-cb9493260be4")]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //
