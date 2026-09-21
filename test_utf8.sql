@@ -1,0 +1,1 @@
+﻿UPDATE [dbo].[TipoDocumento] SET [Nombre] = N'Cédula de Ciudadanía (CC)' WHERE [Id] = 1;

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#f7f9fb]" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registro de Empresa y Trabajador | Syrax Solutions</title>
+<!-- Google Fonts: Sora & Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-container": "#3fe1fd",
+            "surface": "#f7f9fb",
+            "on-primary-container": "#003751",
+            "on-secondary-fixed-variant": "#004e5a",
+            "surface-tint": "#006591",
+            "background": "#f7f9fb",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#eff1f3",
+            "on-secondary-fixed": "#001f25",
+            "tertiary-container": "#919cb2",
+            "inverse-surface": "#2d3133",
+            "on-tertiary-fixed-variant": "#3c475a",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#eceef0",
+            "tertiary-fixed": "#d8e3fb",
+            "surface-bright": "#f7f9fb",
+            "on-tertiary-container": "#293446",
+            "primary-container": "#0ea5e9",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#d8dadc",
+            "secondary": "#006877",
+            "secondary-fixed": "#a2eeff",
+            "primary": "#006591",
+            "on-tertiary-fixed": "#111c2d",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#2fd9f4",
+            "surface-variant": "#e0e3e5",
+            "on-surface-variant": "#3e4850",
+            "outline-variant": "#bec8d2",
+            "surface-container-high": "#e6e8ea",
+            "on-primary-fixed-variant": "#004c6e",
+            "surface-container-highest": "#e0e3e5",
+            "outline": "#6e7881",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#89ceff",
+            "on-primary-fixed": "#001e2f",
+            "on-background": "#191c1e",
+            "inverse-primary": "#89ceff",
+            "error": "#ba1a1a",
+            "on-primary": "#ffffff",
+            "tertiary-fixed-dim": "#bcc7de",
+            "tertiary": "#545f73",
+            "on-surface": "#191c1e",
+            "surface-container-low": "#f2f4f6",
+            "primary-fixed": "#c9e6ff",
+            "on-secondary-container": "#00616f"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            sans: ["Hanken Grotesk", "sans-serif"],
+            heading: ["Sora", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scrollbars">
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-on-surface antialiased relative font-sans selection:bg-primary-container selection:text-on-primary" style="background-image: linear-gradient(rgba(247, 249, 251, 0.76), rgba(247, 249, 251, 0.86)), url('https://lh3.googleusercontent.com/aida/AEtjO1W3ggXfwGkTOov4k1JUrssAb60YigC0lBa_b2jvZAyVi7rFfymLH0rqU4XSSCazhUzufKQ2EurWTGdLR02QkokWJS4HN16gjbkKNN-DcO0LeKg5oHh-TdRdsz_DJzXlqnJF3cHliHv3tghKVHswPoXsku07bP4Ao3UdVRb1dIa9eofFL1wC7173m2XatydyEWT4QFj9ER3ZGp6YCysKDpkmBjBz8V5_xJMnZOO12CopdPtzozMWwd9zOos'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+<!-- Main Container -->
+<div class="relative z-10 min-h-screen flex flex-col justify-between py-8 px-4 sm:px-6 lg:px-8">
+<!-- Top Bar / Navigation -->
+<header class="max-w-4xl w-full mx-auto flex items-center justify-between pb-6">
+<a class="flex items-center gap-2 group" href="#">
+<span class="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+          Portal Oficial
+        </span>
+</a>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant">
+<span class="hidden sm:inline text-xs font-medium">¿Ya tienes una cuenta empresarial?</span>
+<a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-outline-variant/60 bg-surface-container-lowest/90 hover:bg-white text-on-surface text-xs font-semibold shadow-sm hover:border-primary/50 transition-all" href="#">
+<span class="material-symbols-outlined text-[16px] text-primary">login</span>
+<span>Iniciar Sesión</span>
+</a>
+</div>
+</header>
+<!-- Centered Card Container -->
+<main class="max-w-3xl w-full mx-auto my-auto">
+<div class="bg-surface-container-lowest/95 backdrop-blur-md rounded-3xl shadow-[0_20px_50px_rgba(14,165,233,0.08)] border border-outline-variant/30 overflow-hidden">
+<!-- Header with Brand Logo (matching login visual aesthetic) -->
+<div class="pt-8 pb-6 px-6 sm:px-10 flex flex-col items-center text-center border-b border-surface-container">
+<img alt="Syrax Solutions Logo" class="h-14 sm:h-16 w-auto object-contain mb-3 drop-shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAJ1M247HafO0nn0X8R4MQ9QIMWjvrn5qZvGUA8Xu_qFDoPmCbBMid_pjdTJvmcoen61OYnfvdixM06oIgHYChWtW9Lcx9FhVoJeR_Q-U2G3i36lnNguwGWhCCIg877_SrknLIfnJlSm5Yh1_IEkbYmNPoYw9__5EaNg9QYnNYiEeBHVMWRHNNK_2LrS0UYh71XCdfQIjBWxMxIlrbkCXuRvFi7uFHp_e5b2Stw0TxLLwE_1e3J5y96LSiy1Sdt4zhYg"/>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-50 text-primary border border-sky-200/50 mb-2">
+<span class="material-symbols-outlined text-[15px]">badge</span>
+<span>Registro Empresarial</span>
+<span class="text-outline-variant">•</span>
+<span class="font-normal text-on-surface-variant">Paso único de vinculación</span>
+</div>
+<h1 class="font-heading text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">
+            Crear Cuenta Empresarial
+          </h1>
+<p class="text-sm text-on-surface-variant mt-1.5 max-w-xl font-normal">
+            Ingresa los datos personales del colaborador y la información de la empresa para activar tu entorno corporativo en Syrax Solutions.
+          </p>
+</div>
+<!-- Registration Form Body -->
+<form class="p-6 sm:p-10 space-y-8" id="signup-form" onsubmit="event.preventDefault(); alert('¡Registro enviado con éxito a Syrax Solutions! Te hemos enviado un correo de confirmación.');">
+<!-- SECCIÓN 1: DATOS DEL TRABAJADOR / USUARIO -->
+<div class="space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary font-heading font-bold text-xs flex items-center justify-center">
+                  1
+                </div>
+<h2 class="font-heading text-sm font-bold text-on-surface tracking-wide uppercase">
+                  Datos del Colaborador / Usuario
+                </h2>
+</div>
+<span class="text-[11px] text-on-surface-variant"><span class="text-error">*</span> Campos obligatorios</span>
+</div>
+<!-- Row 1: Tipo & Número de Documento -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="doc_type">
+                  Tipo de Documento <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">badge</span>
+<select class="w-full appearance-none bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-10 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition cursor-pointer" id="doc_type" required="">
+<option disabled="" selected="" value="">Seleccione tipo de documento...</option>
+<option value="CC">Cédula de Ciudadanía (CC)</option>
+<option value="CE">Cédula de Extranjería (CE)</option>
+<option value="PASSPORT">Pasaporte</option>
+<option value="NIT">NIT / Registro Mercantil</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="doc_number">
+                  Número de Documento <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">tag</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="doc_number" placeholder="Ej: 1020345678" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Row 2: Nombres y Apellidos -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="first_names">
+                  Nombres <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">person</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="first_names" placeholder="Ej: Laura Sofía" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="last_names">
+                  Apellidos <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">person_outline</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="last_names" placeholder="Ej: Vargas Navarro" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Row 3: Correo Electrónico & Teléfono -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="email">
+                  Correo Electrónico Corporativo <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">mail</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="email" placeholder="colaborador@syrax.co" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="phone">
+                  Teléfono / Celular <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">call</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="phone" placeholder="+57 300 000 0000" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Row 4: Dirección Residencial -->
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="address">
+                Dirección Residencial <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">home_pin</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="address" placeholder="Ej: Carrera 15 # 85-30 Torre 2 Apt 401, Bogotá" required="" type="text"/>
+</div>
+</div>
+<!-- Row 5: Rol / Cargo & Contraseña Inicial -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="role">
+                  Rol / Cargo Solicitado <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">work</span>
+<select class="w-full appearance-none bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-10 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition cursor-pointer" id="role" required="">
+<option disabled="" selected="" value="">Seleccione cargo o área...</option>
+<option value="lead">Tech Lead / Arquitecto</option>
+<option value="dev">Desarrollador Senior / Fullstack</option>
+<option value="cloud">Consultor Cloud &amp; DevOps</option>
+<option value="support">Soporte Técnico Especializado</option>
+<option value="admin">Administrador de Cuenta Empresarial</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="password">
+                  Contraseña Inicial <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">lock</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-11 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="password" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Mostrar u ocultar contraseña" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition focus:outline-none" onclick="togglePasswordVisibility('password')" type="button">
+<span class="material-symbols-outlined text-[18px]" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SECCIÓN 2: DATOS DE LA EMPRESA O VINCULACIÓN -->
+<div class="space-y-5 pt-4 border-t border-surface-container">
+<div class="flex items-center gap-2.5 pb-3 border-b border-surface-container">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary font-heading font-bold text-xs flex items-center justify-center">
+                2
+              </div>
+<h2 class="font-heading text-sm font-bold text-on-surface tracking-wide uppercase">
+                Datos de la Empresa o Vinculación
+              </h2>
+</div>
+<!-- Row 1: NIT & Business Name -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="company_nit">
+                  NIT de la Empresa <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">corporate_fare</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="company_nit" placeholder="Ej: 901.458.920-1" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="company_name">
+                  Nombre o Razón Social <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">business</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="company_name" placeholder="Ej: Tech Innovations S.A.S." required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Row 2: Dirección y Teléfono de la Empresa -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="company_address">
+                  Dirección Corporativa <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">location_on</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="company_address" placeholder="Ej: Av. El Dorado # 68C-61" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="company_phone">
+                  Teléfono Empresarial <span class="text-error">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[18px]">call</span>
+<input class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-full pl-11 pr-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition" id="company_phone" placeholder="Ej: +57 (601) 745 2000" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Row 3: Descripción de la Empresa -->
+<div>
+<label class="block text-xs font-semibold text-on-surface uppercase tracking-wider mb-1.5" for="company_description">
+                Descripción de la Empresa / Objeto Comercial <span class="text-error">*</span>
+</label>
+<div class="relative">
+<textarea class="w-full bg-[#F1F5F9] hover:bg-[#ebf0f5] focus:bg-white border-0 rounded-2xl p-4 text-sm text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition resize-none" id="company_description" placeholder="Describe la actividad comercial, sector productivo o perfil de la organización..." required="" rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Terms & Agreement Checkbox -->
+<div class="p-4 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30 flex items-start gap-3">
+<div class="relative flex items-center justify-center w-5 h-5 mt-0.5 rounded border border-outline-variant bg-white group hover:border-primary transition-colors flex-shrink-0">
+<input class="peer opacity-0 absolute inset-0 cursor-pointer w-full h-full" id="terms" required="" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary opacity-0 peer-checked:opacity-100 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<label class="text-xs text-on-surface-variant leading-relaxed cursor-pointer select-none" for="terms">
+              Certifico que los datos suministrados corresponden fielmente a mi identidad y a la empresa representada, y acepto los <a class="text-primary font-semibold hover:underline" href="#">Términos de Servicio</a> y las <a class="text-primary font-semibold hover:underline" href="#">Políticas de Privacidad de Syrax Solutions</a>.
+            </label>
+</div>
+<!-- Form Actions Buttons -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-2">
+<a class="w-full sm:w-auto text-center px-6 py-3 rounded-full border border-outline-variant/50 hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface text-sm font-semibold transition" href="#">
+              Regresar al Inicio
+            </a>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-primary-container hover:bg-primary text-on-primary font-semibold text-sm shadow-sm hover:shadow transition duration-200 active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Completar Registro Empresarial</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Alternative Sign In Banner Below Card -->
+<div class="mt-6 text-center">
+<p class="text-sm text-on-surface-variant">
+          ¿Ya eres miembro registrado? 
+          <a class="text-primary font-semibold hover:text-primary-container transition inline-flex items-center gap-1 ml-1" href="#">
+<span>Inicia sesión con tus credenciales</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</p>
+</div>
+</main>
+<!-- Page Footer -->
+<footer class="max-w-4xl w-full mx-auto pt-8 pb-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-on-surface-variant/70 border-t border-outline-variant/30 mt-8">
+<div>© 2025 Syrax Solutions. Soluciones Tecnológicas Para Tu Negocio. Todos los derechos reservados.</div>
+<div class="flex items-center gap-5">
+<a class="hover:text-primary transition" href="#">Seguridad</a>
+<a class="hover:text-primary transition" href="#">Soporte 24/7</a>
+<a class="hover:text-primary transition" href="#">Contacto</a>
+</div>
+</footer>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md" id="success-modal"><div class="relative w-full max-w-lg bg-surface-container-lowest/95 backdrop-blur-md rounded-3xl shadow-[0_20px_50px_rgba(14,165,233,0.08)] border border-outline-variant/30 overflow-hidden p-6 sm:p-8"><button aria-label="Cerrar modal" class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1.5 rounded-full hover:bg-surface-container-low transition" onclick="document.getElementById('success-modal').style.display='none'" type="button"><span class="material-symbols-outlined text-[20px] block">close</span></button><div class="flex flex-col items-center text-center"><div class="relative mb-4"><div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/60 shadow-sm"><span class="material-symbols-outlined text-3xl">check_circle</span></div><div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center border-2 border-white text-xs"><span class="material-symbols-outlined text-[14px]">verified</span></div></div><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-50 text-primary border border-sky-200/50 mb-2"><span class="material-symbols-outlined text-[15px]">task_alt</span><span>Registro Verificado</span></div><h2 class="font-heading text-2xl font-bold text-on-surface tracking-tight mb-1.5">¡Registro Completado con Éxito!</h2><p class="text-xs sm:text-sm text-on-surface-variant max-w-sm mb-5 font-normal">La cuenta corporativa para <strong class="text-on-surface font-semibold">Tech Innovations S.A.S.</strong> y el usuario colaborador han sido creados correctamente en Syrax Solutions.</p><div class="w-full bg-[#F1F5F9] rounded-2xl p-4 border border-outline-variant/30 text-left mb-4 space-y-2.5"><div class="flex items-start justify-between text-xs"><span class="text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">business</span>Empresa:</span><span class="font-semibold text-on-surface text-right">Tech Innovations S.A.S. <span class="text-[11px] font-normal text-on-surface-variant block">(NIT: 901.458.920-1)</span></span></div><div class="flex items-center justify-between text-xs"><span class="text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">person</span>Colaborador:</span><span class="font-semibold text-on-surface text-right">Laura Sofía Vargas Navarro</span></div><div class="flex items-center justify-between text-xs"><span class="text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">mail</span>Correo corporativo:</span><span class="font-semibold text-on-surface text-right">colaborador@syrax.co</span></div><div class="flex items-center justify-between text-xs"><span class="text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">badge</span>Rol / Cargo:</span><span class="font-semibold text-on-surface text-right">Arquitecto de Soluciones Cloud</span></div><div class="flex items-center justify-between text-xs pt-1.5 border-t border-outline-variant/30"><span class="text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-emerald-600">verified_user</span>Estado:</span><span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Activa y lista para operar</span></div></div><div class="w-full flex items-start gap-2 bg-sky-50/80 border border-sky-200/50 rounded-xl p-3 text-left mb-6"><span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">mark_email_read</span><p class="text-xs text-on-surface-variant leading-relaxed">Hemos enviado un correo de bienvenida con las instrucciones de acceso y verificación inicial.</p></div><div class="w-full flex flex-col sm:flex-row gap-3"><a class="w-full sm:w-1/2 order-2 sm:order-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full border border-outline-variant/60 bg-white hover:bg-surface-container-low text-on-surface text-xs font-semibold shadow-sm transition" href="#"><span class="material-symbols-outlined text-[16px]">download</span><span>Descargar Comprobante PDF</span></a><a class="w-full sm:w-1/2 order-1 sm:order-2 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full bg-primary-container hover:bg-primary text-on-primary text-xs font-semibold shadow-sm hover:shadow transition" href="#"><span class="material-symbols-outlined text-[16px]">login</span><span>Ir al Inicio de Sesión</span></a></div></div></div></div></div>
+<!-- Client Script for UI Interactions -->
+<script>
+    function togglePasswordVisibility(fieldId) {
+      const field = document.getElementById(fieldId);
+      const icon = document.getElementById('password-toggle-icon');
+      if (field.type === 'password') {
+        field.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        field.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+  </script>
+</body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Syrax Client Portal - My Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#3e4850",
+                        "primary": "#006591",
+                        "tertiary-fixed": "#d8e3fb",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#293446",
+                        "surface-tint": "#006591",
+                        "on-primary-fixed-variant": "#004c6e",
+                        "on-primary-container": "#003751",
+                        "tertiary": "#545f73",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary": "#006877",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-primary": "#89ceff",
+                        "on-secondary-container": "#00616f",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "surface-bright": "#f7f9fb",
+                        "primary-container": "#0ea5e9",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#111c2d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#a2eeff",
+                        "surface-container": "#eceef0",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#3fe1fd",
+                        "primary-fixed": "#c9e6ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "error-container": "#ffdad6",
+                        "outline": "#6e7881",
+                        "on-primary-fixed": "#001e2f",
+                        "outline-variant": "#bec8d2",
+                        "tertiary-container": "#919cb2",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#89ceff",
+                        "on-secondary-fixed": "#001f25"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "max-width": "1280px",
+                        "unit": "4px",
+                        "xxl": "64px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Hanken Grotesk"],
+                        "caption": ["Hanken Grotesk"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .natural-glow {
+            box-shadow: 0 20px 40px 0 hsla(210, 20%, 30%, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md font-body-md flex h-screen overflow-hidden antialiased">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-md gap-xs hidden md:flex z-50 shadow-none">
+<div class="px-gutter pb-md flex items-center gap-md border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">widgets</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Syrax Admin</h2>
+<p class="font-caption text-caption text-on-surface-variant">Enterprise Management</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-xs py-sm flex flex-col gap-unit mt-md">
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Clientes</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Solicitudes</span>
+</a>
+<!-- ACTIVE -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 bg-primary-container text-on-primary-container hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-label-md text-label-md">Proyectos</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">task</span>
+<span class="font-label-md text-label-md">Tareas</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-md text-label-md">Servicios</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-label-md text-label-md">Soporte</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">handyman</span>
+<span class="font-label-md text-label-md">Mantenimiento</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Usuarios</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-md text-label-md">Reportes</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Notificaciones</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+</div>
+<div class="mt-auto px-xs border-t border-surface-variant pt-md">
+<a class="flex items-center gap-md px-md py-sm rounded-full mx-2 text-error hover:bg-error-container hover:text-on-error-container transition-all active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Cerrar Sesión</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-64 h-full relative">
+<!-- TopAppBar (Mobile Only) -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)] docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-margin h-16 md:hidden">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">Syrax Solutions</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors duration-200 p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<img alt="User profile photo" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, circular avatar portrait of a professional corporate user in a modern office setting. Bright lighting, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnQUYJN1KK5K7qe_1Wr5mudBLjcRQX6OCX0Z6YDQoQ8KHgphmRi7kWNjkp9Q5OBAyYtMEszOAFld_gA_LGyIDr7ogRaC58Z18r5adNLYED01LIlojtR2VkE6nRYwSz9PRqSlB2_0NSmqdjCKkvDTLLHfEjpG4wiOttMnqiEg5Q8ASpF8aAJ-4owoSblHQASY493CSHU6JC6rhFx5Kc3mI3_QGNhpu01Er-u8o5Y0Ok1-ZZgw_y9w0T"/>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-gutter lg:p-xxl bg-background">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background">My Projects</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-xs">Track progress and access deliverables for your active engagements.</p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-[32px] py-md rounded-full hover:bg-on-primary-container transition-colors shadow-sm flex items-center gap-sm">
+<span class="material-symbols-outlined">add</span>
+                        New Request
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout for Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-lg">
+<!-- Project Card 1: Active/In Development -->
+<div class="bg-surface-container-lowest rounded-xl p-lg natural-glow flex flex-col h-full border border-surface-variant">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined">code</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Nexus Migration</h3>
+<span class="font-caption text-caption text-on-surface-variant">ID: PRJ-2024-089</span>
+</div>
+</div>
+<span class="px-sm py-xs rounded-full bg-primary-container text-on-primary-container font-caption text-caption flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span> In Development
+                        </span>
+</div>
+<div class="my-md flex-1">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-label-md text-label-md text-on-surface">Overall Progress</span>
+<span class="font-headline-md text-headline-md text-primary">65%</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="bg-surface p-md rounded-lg mb-md">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Next Milestone</p>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary">flag</span>
+<span class="font-body-md text-body-md">Database Schema Finalization (Oct 24)</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-surface-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Small circular avatar of a tech project manager smiling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgqH07cpxgfFJCr6U7rd7xDbVKYFRQ88ylKrt8c15ld-VvBifBn611r1SsfPnrM3tEHnV1DLp8_wRuL1PX9P218A7gBAJYT_EznOrfbRpxJGqpA9htKcCp4VtsdY71QK6rBsFZiaLiaR-jKPFIcUMkhGU7g3nsQ0byLLHPFPE4Lx_VHdEXPt0sNAxGW-JPiSG41nc2uQP1pGdi1xUbauU1qOUQBPJ7qPKkkpmVZKldX4xFqEsJnwtC"/>
+<img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Small circular avatar of a female software engineer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDihBM-CpHa3MV6HgPxsGZwQeWXrZFeABhEkLbGEXL9Yqjos7e4YUf1JgUTG_IPkhjpgVHeCjxDTOb5_7d_KNDyVx46T9RCNlkBTq4QuSswx523ij_3RLFxaunVU90WE3dXBdDDRjEtdgf-J4Ss_4iIthaZ-dZgi3lNjWUbKizjV2l2KrrSNODiRCECFZRKBRG2HdD7njSHiQ_6FAUVUGp3VUe5u94WWYGlyRctCT3IeP2Ko3Q3WpBK"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-surface-container-highest flex items-center justify-center text-xs font-medium text-on-surface-variant">+2</div>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-on-primary-container transition-colors flex items-center gap-xs">
+                            View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 2: Planning -->
+<div class="bg-surface-container-lowest rounded-xl p-lg natural-glow flex flex-col h-full border border-surface-variant">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Alpha Redesign</h3>
+<span class="font-caption text-caption text-on-surface-variant">ID: PRJ-2024-112</span>
+</div>
+</div>
+<span class="px-sm py-xs rounded-full bg-secondary-container text-on-secondary-container font-caption text-caption flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Planning
+                        </span>
+</div>
+<div class="my-md flex-1">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-label-md text-label-md text-on-surface">Overall Progress</span>
+<span class="font-headline-md text-headline-md text-secondary">15%</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="bg-surface p-md rounded-lg mb-md">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Next Milestone</p>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary">flag</span>
+<span class="font-body-md text-body-md">Wireframe Approval (Nov 02)</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-surface-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<img alt="Team member" class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover" data-alt="Small circular avatar of a UI designer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcdoGXks7zaRu929ITabP8NDDCiuTERPs0sxkxOxSEbvU9m1sz8-QirBof9-k7uIPs8bPBJQ71zrwaCfPANdRBxGS9bG9h1V41EOoo5nJjj7w2F-OaMWDwWDtvZ5XBXHVSp1LoXZPRE7pSWOvqd6mmz-fviZ5saYyZlVGkTbLoFs3pbobFUEecfUnYZsEqnFgLZslEscMQg8D3ELUb5onh_q6sk8ZiFXJ96F_wU8D207ep1PSJATcX"/>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-on-primary-container transition-colors flex items-center gap-xs">
+                            View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project Card 3: Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-lg natural-glow flex flex-col h-full border border-surface-variant opacity-80">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Cloud Security Audit</h3>
+<span class="font-caption text-caption text-on-surface-variant">ID: PRJ-2023-045</span>
+</div>
+</div>
+<span class="px-sm py-xs rounded-full bg-surface-variant text-on-surface-variant font-caption text-caption flex items-center gap-xs">
+                            Completed
+                        </span>
+</div>
+<div class="my-md flex-1">
+<div class="flex justify-between items-end mb-xs">
+<span class="font-label-md text-label-md text-on-surface">Overall Progress</span>
+<span class="font-headline-md text-headline-md text-on-surface">100%</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-2">
+<div class="bg-tertiary h-2 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="bg-surface p-md rounded-lg mb-md">
+<p class="font-label-md text-label-md text-on-surface-variant mb-xs">Final Deliverable</p>
+<div class="flex items-center gap-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary">description</span>
+<span class="font-body-md text-body-md">Audit_Report_Final.pdf</span>
+</div>
+</div>
+<div class="mt-auto pt-md border-t border-surface-variant flex justify-end items-center">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs">
+                            View Archive <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

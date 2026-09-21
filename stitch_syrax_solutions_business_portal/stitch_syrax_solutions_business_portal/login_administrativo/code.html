@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Syrax Solutions - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#3e4850",
+                      "primary": "#006591",
+                      "tertiary-fixed": "#d8e3fb",
+                      "background": "#f7f9fb",
+                      "on-error": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "on-tertiary-container": "#293446",
+                      "surface-tint": "#006591",
+                      "on-primary-fixed-variant": "#004c6e",
+                      "on-primary-container": "#003751",
+                      "tertiary": "#545f73",
+                      "inverse-on-surface": "#eff1f3",
+                      "secondary": "#006877",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-primary": "#89ceff",
+                      "on-secondary-container": "#00616f",
+                      "inverse-surface": "#2d3133",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "surface-bright": "#f7f9fb",
+                      "primary-container": "#0ea5e9",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-tertiary-fixed": "#111c2d",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#bcc7de",
+                      "surface": "#f7f9fb",
+                      "secondary-fixed": "#a2eeff",
+                      "surface-container": "#eceef0",
+                      "surface-dim": "#d8dadc",
+                      "secondary-container": "#3fe1fd",
+                      "primary-fixed": "#c9e6ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "error-container": "#ffdad6",
+                      "outline": "#6e7881",
+                      "on-primary-fixed": "#001e2f",
+                      "outline-variant": "#bec8d2",
+                      "tertiary-container": "#919cb2",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#191c1e",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#89ceff",
+                      "on-secondary-fixed": "#001f25"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "md": "16px",
+                      "gutter": "24px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "max-width": "1280px",
+                      "unit": "4px",
+                      "xxl": "64px",
+                      "margin": "32px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "caption": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-md": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface min-h-screen flex items-center justify-center p-gutter" style="background-image: linear-gradient(rgba(247, 249, 251, 0.72), rgba(247, 249, 251, 0.82)), url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCZHY0am9I9KkYP7AqtpuzAl_jFwHKMvfqhzLP80mAyLiFZ_A2eOfN3cOhMEiMcIY2KRPPMJkvqFNeIc46A7RAR5Q3V_yr5zc5rLpUSoOvDTT-IfaK8HbDnfdw0M8_znjXuoINT7tEGzXeMJyGQ2OLF6OYK0YSkpAlBYrrN6it3sXTnYO2oEBrIFrToH4axUHuYSVJHfUl9Ima3O3XpQ_xMKycFeWyyTlRo_5-5T86L6n8rT8Z-YgwN&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)] p-xxl w-full max-w-[480px] border">
+<!-- Logo Section -->
+<div class="flex flex-col items-center mb-xl">
+<img alt="Syrax Solutions Logo" class="w-32 h-auto mb-md object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTWMrOKeqAYB4Vtbsj-l1TPTvWh8nYR1SzVWIbCmQESEDKyt2DbgRkjKBvB9z-IEzlgqH7dbcUlGBfFeo-rY7Hn6NTpvL5g4lwjO6mxRcbvqdL7Oad5PhlVfZgq5BE63hBAExAH0BsEMtwd9z_SAQeMzvJ8XjN9i6OFUj9vi1WDxgTJhqOw35RxyLi_Ae4nQIvJgy9Mj5HvJnKqECgbEH1TPUF4wM8YpNCxb2ncm1Sqo3bD3ZfcejXeK_8wgozb9gVRg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm text-center">Sign in to your Syrax Admin account to manage enterprise services.</p>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-lg">
+<!-- Email Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline" style="font-variation-settings: 'FILL' 0;">mail</span>
+<input class="w-full bg-[#F1F5F9] border-none py-md pl-12 pr-md font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition-shadow rounded-full" id="email" placeholder="admin@syrax.com" required="" type="email">
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline" style="font-variation-settings: 'FILL' 0;">lock</span>
+<input class="w-full bg-[#F1F5F9] border-none py-md pl-12 pr-md font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-primary focus:outline-none transition-shadow rounded-full" id="password" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Actions Row -->
+<div class="flex items-center justify-between mt-sm">
+<label class="flex items-center gap-xs cursor-pointer group">
+<div class="relative flex items-center justify-center w-5 h-5 rounded border border-outline-variant bg-surface-container-lowest group-hover:border-primary transition-colors">
+<input class="peer opacity-0 absolute inset-0 cursor-pointer w-full h-full" type="checkbox">
+<span class="material-symbols-outlined text-[16px] text-primary opacity-0 peer-checked:opacity-100 transition-opacity" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-[14px]">Remember me</span>
+</label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-md px-xl rounded-full hover:bg-primary hover:text-on-primary transition-colors duration-200 mt-md shadow-sm active:scale-[0.98]" type="submit">
+                Login
+            </button><div class="text-center mt-md">
+    <p class="font-body-md text-body-md text-on-surface-variant text-[14px]">
+        Don't have an account? 
+        <a href="#" class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors">Sign up</a>
+    </p>
+</div>
+</form>
+</div>
+
+
+
+
+</body></html>

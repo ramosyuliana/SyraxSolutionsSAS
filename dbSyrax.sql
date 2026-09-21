@@ -1,0 +1,388 @@
+﻿USE [master]
+GO
+/****** Objeto: Database [dbSyraxSolutionsSASLTDA] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+CREATE DATABASE [dbSyraxSolutionsSASLTDA]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'dbSyraxSolutionsSASLTDA', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL17.SQLEXPRESS\MSSQL\DATA\dbSyraxSolutionsSASLTDA.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'dbSyraxSolutionsSASLTDA_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL17.SQLEXPRESS\MSSQL\DATA\dbSyraxSolutionsSASLTDA_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET COMPATIBILITY_LEVEL = 170
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [dbSyraxSolutionsSASLTDA].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET  MULTI_USER 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET OPTIMIZED_LOCKING = OFF 
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [dbSyraxSolutionsSASLTDA]
+GO
+/****** Objeto: Table [dbo].[Avance] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Avance](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdProyecto] [int] NULL,
+	[Evidencia] [nvarchar](max) NULL,
+	[FechaEntrega] [date] NULL,
+ CONSTRAINT [PK_Avance] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Empresa] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Empresa](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nit] [varchar](50) NULL,
+	[Nombre] [varchar](50) NULL,
+	[Direccion] [varchar](150) NULL,
+	[Telefono] [varchar](20) NULL,
+	[Descripcion] [varchar](150) NULL,
+ CONSTRAINT [PK_Empresa] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Historial] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Historial](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdSuscripcion] [int] NULL,
+	[IdMetodoPago] [int] NULL,
+	[Valor] [decimal](18, 2) NULL,
+	[FechaPago] [date] NULL,
+	[Estado] [varchar](50) NULL,
+ CONSTRAINT [PK_Historial] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[MetodoPago] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MetodoPago](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+ CONSTRAINT [PK_MetodoPago] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Notificaciones] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Notificaciones](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdProyecto] [int] NULL,
+	[IdCliente] [int] NULL,
+	[Titulo] [varchar](50) NULL,
+	[Mensaje] [varchar](150) NULL,
+	[FechaEnvio] [date] NULL,
+	[Canal] [varchar](50) NULL,
+ CONSTRAINT [PK_Notificaciones] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Observaciones] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Observaciones](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdAvance] [int] NULL,
+	[IdUsuario] [int] NULL,
+	[Descripcion] [varchar](max) NULL,
+ CONSTRAINT [PK_Observaciones] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Plan] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Plan](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](70) NULL,
+	[Descripcion] [varchar](150) NULL,
+	[PrecioEstimado] [decimal](18, 2) NULL,
+	[DuracionEstimada] [int] NULL,
+	[Estado] [varchar](50) NULL,
+	[IdTipoPlan] [int] NULL,
+ CONSTRAINT [PK_Plan] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Proyecto] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Proyecto](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Titulo] [varchar](50) NULL,
+	[Descripcion] [varchar](200) NULL,
+	[FechaCreacion] [date] NULL,
+	[FechaEntrega] [date] NULL,
+	[Estado] [varchar](50) NULL,
+	[Precio] [decimal](18, 2) NULL,
+	[IdSuscripcion] [int] NULL,
+ CONSTRAINT [PK_Proyecto] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Rol] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rol](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+ CONSTRAINT [PK_Rol] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Suscripcion] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Suscripcion](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdUsuario] [int] NULL,
+	[IdPlan] [int] NULL,
+ CONSTRAINT [PK_Suscripcion] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[TipoDocumento] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TipoDocumento](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+ CONSTRAINT [PK_TipoDocumento] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[TipoPlan] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TipoPlan](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](150) NULL,
+ CONSTRAINT [PK_TipoPlan] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Objeto: Table [dbo].[Usuario] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Usuario](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[NumeroDocumento] [varchar](50) NOT NULL,
+	[Nombres] [varchar](150) NOT NULL,
+	[Apellidos] [varchar](150) NOT NULL,
+	[Correo] [varchar](150) NOT NULL,
+	[Telefono] [varchar](20) NOT NULL,
+	[Direccion] [varchar](150) NOT NULL,
+	[Clave] [varchar](50) NOT NULL,
+	[IdEmpresa] [int] NOT NULL,
+	[IdTipoDocumento] [int] NOT NULL,
+	[IdRol] [int] NOT NULL,
+ CONSTRAINT [PK_Usuario] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+/****** Objeto: Index [IX_Usuario] Fecha de script: 7/09/2026 3:09:47 p. m. ******/
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Usuario] ON [dbo].[Usuario]
+(
+	[Correo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Avance]  WITH CHECK ADD  CONSTRAINT [FK_Avance_Proyecto] FOREIGN KEY([IdProyecto])
+REFERENCES [dbo].[Proyecto] ([Id])
+GO
+ALTER TABLE [dbo].[Avance] CHECK CONSTRAINT [FK_Avance_Proyecto]
+GO
+ALTER TABLE [dbo].[Historial]  WITH CHECK ADD  CONSTRAINT [FK_Historial_MetodoPago] FOREIGN KEY([IdMetodoPago])
+REFERENCES [dbo].[MetodoPago] ([Id])
+GO
+ALTER TABLE [dbo].[Historial] CHECK CONSTRAINT [FK_Historial_MetodoPago]
+GO
+ALTER TABLE [dbo].[Historial]  WITH CHECK ADD  CONSTRAINT [FK_Historial_Suscripcion] FOREIGN KEY([IdSuscripcion])
+REFERENCES [dbo].[Suscripcion] ([Id])
+GO
+ALTER TABLE [dbo].[Historial] CHECK CONSTRAINT [FK_Historial_Suscripcion]
+GO
+ALTER TABLE [dbo].[Notificaciones]  WITH CHECK ADD  CONSTRAINT [FK_Notificaciones_Proyecto] FOREIGN KEY([IdProyecto])
+REFERENCES [dbo].[Proyecto] ([Id])
+GO
+ALTER TABLE [dbo].[Notificaciones] CHECK CONSTRAINT [FK_Notificaciones_Proyecto]
+GO
+ALTER TABLE [dbo].[Notificaciones]  WITH CHECK ADD  CONSTRAINT [FK_Notificaciones_Usuario] FOREIGN KEY([IdCliente])
+REFERENCES [dbo].[Usuario] ([Id])
+GO
+ALTER TABLE [dbo].[Notificaciones] CHECK CONSTRAINT [FK_Notificaciones_Usuario]
+GO
+ALTER TABLE [dbo].[Observaciones]  WITH CHECK ADD  CONSTRAINT [FK_Observaciones_Avance] FOREIGN KEY([IdAvance])
+REFERENCES [dbo].[Avance] ([Id])
+GO
+ALTER TABLE [dbo].[Observaciones] CHECK CONSTRAINT [FK_Observaciones_Avance]
+GO
+ALTER TABLE [dbo].[Observaciones]  WITH CHECK ADD  CONSTRAINT [FK_Observaciones_Usuario] FOREIGN KEY([IdUsuario])
+REFERENCES [dbo].[Usuario] ([Id])
+GO
+ALTER TABLE [dbo].[Observaciones] CHECK CONSTRAINT [FK_Observaciones_Usuario]
+GO
+ALTER TABLE [dbo].[Plan]  WITH CHECK ADD  CONSTRAINT [FK_Plan_TipoPlan] FOREIGN KEY([IdTipoPlan])
+REFERENCES [dbo].[TipoPlan] ([Id])
+GO
+ALTER TABLE [dbo].[Plan] CHECK CONSTRAINT [FK_Plan_TipoPlan]
+GO
+ALTER TABLE [dbo].[Proyecto]  WITH CHECK ADD  CONSTRAINT [FK_Proyecto_Suscripcion] FOREIGN KEY([IdSuscripcion])
+REFERENCES [dbo].[Suscripcion] ([Id])
+GO
+ALTER TABLE [dbo].[Proyecto] CHECK CONSTRAINT [FK_Proyecto_Suscripcion]
+GO
+ALTER TABLE [dbo].[Suscripcion]  WITH CHECK ADD  CONSTRAINT [FK_Suscripcion_Plan] FOREIGN KEY([IdPlan])
+REFERENCES [dbo].[Plan] ([Id])
+GO
+ALTER TABLE [dbo].[Suscripcion] CHECK CONSTRAINT [FK_Suscripcion_Plan]
+GO
+ALTER TABLE [dbo].[Suscripcion]  WITH CHECK ADD  CONSTRAINT [FK_Suscripcion_Usuario] FOREIGN KEY([IdUsuario])
+REFERENCES [dbo].[Usuario] ([Id])
+GO
+ALTER TABLE [dbo].[Suscripcion] CHECK CONSTRAINT [FK_Suscripcion_Usuario]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_Empresa] FOREIGN KEY([IdEmpresa])
+REFERENCES [dbo].[Empresa] ([Id])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_Empresa]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_Rol] FOREIGN KEY([IdRol])
+REFERENCES [dbo].[Rol] ([Id])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_Rol]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_TipoDocumento] FOREIGN KEY([IdTipoDocumento])
+REFERENCES [dbo].[TipoDocumento] ([Id])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_TipoDocumento]
+GO
+USE [master]
+GO
+ALTER DATABASE [dbSyraxSolutionsSASLTDA] SET  READ_WRITE 
+GO

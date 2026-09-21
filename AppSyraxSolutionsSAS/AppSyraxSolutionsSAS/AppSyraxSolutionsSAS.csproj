@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -67,10 +67,174 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="index.aspx" />
+    <Content Include="Vista\Assets\Img\logo.png" />
+    <Content Include="Vista\Index\Contacto.aspx" />
+    <Content Include="Vista\Index\Login.aspx" />
+    <Content Include="Vista\Index\Nosotros.aspx" />
+    <Content Include="Vista\Index\Proyectos.aspx" />
+    <Content Include="Vista\Index\servicios.aspx" />
+    <Content Include="Vista\Index\Registro.aspx" />
+    <Content Include="Vista\Admin\Dashboard.aspx" />
+    <Content Include="Vista\Admin\Clientes.aspx" />
+    <Content Include="Vista\Admin\Trabajadores.aspx" />
+    <Content Include="Vista\Admin\Proyectos.aspx" />
+    <Content Include="Vista\Admin\DetalleProyecto.aspx" />
+    <Content Include="Vista\Cliente\Dashboard.aspx" />
+    <Content Include="Vista\Cliente\MisProyectos.aspx" />
+    <Content Include="Vista\Cliente\NuevaSolicitud.aspx" />
+    <Content Include="Vista\Cliente\Soporte.aspx" />
+    <Content Include="Vista\Desarrollador\Dashboard.aspx" />
+    <Content Include="Vista\Desarrollador\Avances.aspx" />
+    <Content Include="Vista\Desarrollador\Proyectos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\Entidades.cs" />
+    <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\UsuarioDatos.cs" />
+    <Compile Include="Datos\EmpresaDatos.cs" />
+    <Compile Include="Datos\CatalogoDatos.cs" />
+    <Compile Include="Datos\ProyectoDatos.cs" />
+    <Compile Include="Datos\AvanceDatos.cs" />
+    <Compile Include="Logica\UsuarioLogica.cs" />
+    <Compile Include="Logica\ProyectoLogica.cs" />
+    <Compile Include="Logica\CatalogoLogica.cs" />
+    <Compile Include="Logica\AvanceLogica.cs" />
+    <Compile Include="Vista\Index\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Desarrollador\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Desarrollador\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Index\Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index\Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Index\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Index\Nosotros.aspx.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index\Nosotros.aspx.designer.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Index\Proyectos.aspx.cs">
+      <DependentUpon>Proyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index\Proyectos.aspx.designer.cs">
+      <DependentUpon>Proyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Index\servicios.aspx.cs">
+      <DependentUpon>servicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Index\servicios.aspx.designer.cs">
+      <DependentUpon>servicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Admin\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Admin\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Admin\Trabajadores.aspx.cs">
+      <DependentUpon>Trabajadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Admin\Trabajadores.aspx.designer.cs">
+      <DependentUpon>Trabajadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Admin\Proyectos.aspx.cs">
+      <DependentUpon>Proyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Admin\Proyectos.aspx.designer.cs">
+      <DependentUpon>Proyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Admin\DetalleProyecto.aspx.cs">
+      <DependentUpon>DetalleProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Admin\DetalleProyecto.aspx.designer.cs">
+      <DependentUpon>DetalleProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\MisProyectos.aspx.cs">
+      <DependentUpon>MisProyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\MisProyectos.aspx.designer.cs">
+      <DependentUpon>MisProyectos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\NuevaSolicitud.aspx.cs">
+      <DependentUpon>NuevaSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\NuevaSolicitud.aspx.designer.cs">
+      <DependentUpon>NuevaSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cliente\Soporte.aspx.cs">
+      <DependentUpon>Soporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Cliente\Soporte.aspx.designer.cs">
+      <DependentUpon>Soporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Desarrollador\Avances.aspx.cs">
+      <DependentUpon>Avances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Desarrollador\Avances.aspx.designer.cs">
+      <DependentUpon>Avances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Desarrollador\Proyectos.aspx.cs">
+      <DependentUpon>Proyectos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Desarrollador\Proyectos.aspx.designer.cs">
+      <DependentUpon>Proyectos.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

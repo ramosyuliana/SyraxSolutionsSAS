@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Syrax Admin - Project Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#3e4850",
+                      "primary": "#006591",
+                      "tertiary-fixed": "#d8e3fb",
+                      "background": "#f7f9fb",
+                      "on-error": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "on-tertiary-container": "#293446",
+                      "surface-tint": "#006591",
+                      "on-primary-fixed-variant": "#004c6e",
+                      "on-primary-container": "#003751",
+                      "tertiary": "#545f73",
+                      "inverse-on-surface": "#eff1f3",
+                      "secondary": "#006877",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-primary": "#89ceff",
+                      "on-secondary-container": "#00616f",
+                      "inverse-surface": "#2d3133",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "surface-bright": "#f7f9fb",
+                      "primary-container": "#0ea5e9",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-tertiary-fixed": "#111c2d",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#bcc7de",
+                      "surface": "#f7f9fb",
+                      "secondary-fixed": "#a2eeff",
+                      "surface-container": "#eceef0",
+                      "surface-dim": "#d8dadc",
+                      "secondary-container": "#3fe1fd",
+                      "primary-fixed": "#c9e6ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "error-container": "#ffdad6",
+                      "outline": "#6e7881",
+                      "on-primary-fixed": "#001e2f",
+                      "outline-variant": "#bec8d2",
+                      "tertiary-container": "#919cb2",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#191c1e",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#89ceff",
+                      "on-secondary-fixed": "#001f25"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "md": "16px",
+                      "gutter": "24px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "xs": "4px",
+                      "max-width": "1280px",
+                      "unit": "4px",
+                      "xxl": "64px",
+                      "margin": "32px"
+              },
+              "fontFamily": {
+                      "label-md": ["Hanken Grotesk"],
+                      "caption": ["Hanken Grotesk"],
+                      "display-lg": ["Sora"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "headline-md": ["Sora"],
+                      "body-md": ["Hanken Grotesk"],
+                      "headline-lg": ["Sora"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen flex">
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-surface-container-lowest border-r border-outline-variant shadow-none flex-col py-md gap-xs z-50">
+<div class="px-gutter pb-md flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined font-headline-md text-headline-md font-bold" data-icon="S">qr_code_2</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Syrax Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Enterprise Management</p>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs mt-md">
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Clientes
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                Solicitudes
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md bg-primary-container text-on-primary-container rounded-full mx-2 active:scale-[0.98] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                Proyectos
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="task">task</span>
+                Tareas
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+                Servicios
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+                Soporte
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="handyman">handyman</span>
+                Mantenimiento
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                Usuarios
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+                Reportes
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                Notificaciones
+            </a>
+<a class="flex items-center gap-md py-sm px-gutter font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Configuración
+            </a>
+</div>
+<div class="mt-auto px-gutter pt-md border-t border-outline-variant">
+<a class="flex items-center gap-md py-sm font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Cerrar Sesión
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 w-full relative">
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden sticky top-0 z-50 flex justify-between items-center w-full px-margin h-16 bg-surface-container-lowest shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)]">
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Syrax Solutions</span>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-full p-2 transition-colors duration-200 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-full p-2 transition-colors duration-200 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<img class="w-8 h-8 rounded-full object-cover ml-2" data-alt="A small, circular avatar portrait of a professional smiling individual in a modern office setting. Light, clean, and corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCynoy3Zvd8HGRF6KOF2aAzL_1EcffFPY2VABjubZMPfvZxe1z1hoAbKIbe90jgfgPBZjrcBq68eTa1B7fJEKzVshevXkCHFIRBxh57r4tekDVboiCvflHjrlVb-xdIeWOl6Nnc0l-W2qodFUtxrR7umqkjbhIC3sSaz5GB_LP0GN02hHjqTux53nCDhI3-dKAvfxe_lzuBHN7y4SSpzg3gmweGzLc8EMqLPVnxAY-cB3jR7sarPC-P"/>
+</div>
+</header>
+<!-- Project Header Section -->
+<section class="px-margin md:px-xxl py-xl md:py-xxl max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-lg mb-xl">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-caption text-caption text-primary bg-primary-container px-3 py-1 rounded-full uppercase tracking-widest">Active</span>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="business">business</span> Acme Corp
+                        </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-sm">Cloud Infrastructure Migration</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Complete overhaul of legacy on-premise servers to a scalable AWS architecture, ensuring zero downtime during transition.</p>
+</div>
+<div class="flex gap-md w-full md:w-auto">
+<button class="flex-1 md:flex-none font-label-md text-label-md px-xl py-3 rounded-full border-2 border-primary text-primary hover:bg-surface-container-low transition-colors text-center">Edit Details</button>
+<button class="flex-1 md:flex-none font-label-md text-label-md px-xl py-3 rounded-full bg-primary text-on-primary hover:bg-primary/90 transition-colors shadow-sm text-center">Complete Project</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Progress & Timeline Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-lg shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)] border border-surface-variant">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">Timeline &amp; Progress</h2>
+<span class="font-headline-md text-headline-md text-primary">68%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-3 bg-surface-container-low rounded-full mb-xl overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000 ease-out" style="width: 68%;"></div>
+</div>
+<div class="flex justify-between items-center mb-md">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1">Start Date</p>
+<p class="font-label-md text-label-md text-on-surface">Oct 12, 2023</p>
+</div>
+<div class="text-right">
+<p class="font-caption text-caption text-on-surface-variant mb-1">Target End Date</p>
+<p class="font-label-md text-label-md text-on-surface">Jan 30, 2024</p>
+</div>
+</div>
+<!-- Gantt-ish Visual -->
+<div class="relative mt-lg h-32 bg-surface-container-lowest rounded-lg border border-surface-variant overflow-hidden">
+<!-- Grid lines -->
+<div class="absolute inset-0 flex justify-between px-md pointer-events-none opacity-20">
+<div class="w-px h-full bg-outline"></div>
+<div class="w-px h-full bg-outline"></div>
+<div class="w-px h-full bg-outline"></div>
+<div class="w-px h-full bg-outline"></div>
+</div>
+<!-- Timeline Bars -->
+<div class="absolute top-4 left-[10%] w-[40%] h-8 bg-primary/20 rounded-md border border-primary/30 flex items-center px-3">
+<span class="font-caption text-caption text-primary truncate">Phase 1: Audit</span>
+</div>
+<div class="absolute top-16 left-[40%] w-[35%] h-8 bg-primary rounded-md flex items-center px-3 shadow-sm">
+<span class="font-caption text-caption text-on-primary truncate">Phase 2: Migration</span>
+</div>
+</div>
+</div>
+<!-- Assigned Team Card -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-lg shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)] border border-surface-variant flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-lg">Assigned Team</h2>
+<div class="flex-1 flex flex-col gap-md">
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a male professional smiling gently in bright office lighting. Corporate, reliable, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgD8YtqBObJqUUzfnyl32bUjDEQZVN-3CdoIHTLJLD5gtoQnA8vwflEwwCah6sOORJwemjSG3A0sMzOFvjiF5s9GudrtOVy2DmIXPrxVeBeWK0vlDV_bQPm6m01hTTWEBqFiK05NH7Cy6dGbVlF2wg28kMXmDysgBDTqDFwiFC4-sKbhtK5i4REJsXm1ZTMWiYOvlDKGr5xXTe8CeruGnUdljFboHo98ODxXMzc0m-N8VzCINvtebL"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Alex Mercer</p>
+<p class="font-caption text-caption text-on-surface-variant">Lead Architect</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="more_vert">more_vert</span>
+</div>
+<div class="flex items-center justify-between p-sm hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-md">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a female professional with glasses smiling in bright office lighting. Corporate, reliable, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT2PzjwIWtCHGtuCwpMm_YOfjoOqhJAGD6ODNIYzv3Kbg6FkMeUCd9WBy4zDtb6naIZiRD187cGaBcnfxtqqQ7CDvF5ZKONL4bX5FGFG1BJfv-ugcMeyMyO4wwAXkED8jZEMBx6NEIDRz9e1j8gSA5sz1iPI-AtiZRYqxV5n_WH3f1E8q9U1tN8YrR9ZSr86YELyGwkHTqkMJcMtQlswLt22cJ4aQsCzh1t9V3nVnsBvhb8stToSW-"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sarah Jenkins</p>
+<p class="font-caption text-caption text-on-surface-variant">DevOps Engineer</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="more_vert">more_vert</span>
+</div>
+</div>
+<button class="mt-auto w-full py-2 border border-dashed border-outline-variant rounded-lg text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low hover:text-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span> Add Member
+                    </button>
+</div>
+<!-- Task List Card -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl p-lg shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)] border border-surface-variant mt-lg">
+<div class="flex justify-between items-center mb-lg pb-md border-b border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface">Key Tasks</h2>
+<button class="font-label-md text-label-md text-primary flex items-center gap-1 hover:underline">View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Task Item -->
+<div class="flex items-center justify-between p-md bg-surface rounded-lg border border-transparent hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-lg">
+<div class="w-6 h-6 rounded-full border-2 border-primary flex items-center justify-center bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface line-through opacity-70">Provision AWS EC2 instances</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#dcfce7] text-[#166534] uppercase tracking-wider">Completed</span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> Oct 15</span>
+</div>
+</div>
+</div>
+<img class="w-8 h-8 rounded-full object-cover hidden sm:block" data-alt="Small round avatar of a team member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU5PGbwzKi7CsR5MFCMWvpLZhRKBbVu8lcwsfg8QMXF-PZfuKA5kuiso5mGcWdynjjICsNuEu8Jt0UUSF-Tfpujcs20GS5CVTAOq0wkzPoUhG1vR8dmJX-so9U-3r4UfMJDHpUMmgvSGn3agj7SimD7ZpmfYGGZC1-t2IBJjgR6QzWmXJo9ZqektFiTIfqj7bsKPXIPPzuxxQrgynuIugcYl-v0PFfYlLj3aDAODi_gLcriBr0QjZM"/>
+</div>
+<!-- Task Item -->
+<div class="flex items-center justify-between p-md bg-surface rounded-lg border border-transparent hover:border-outline-variant transition-colors group">
+<div class="flex items-center gap-lg">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant cursor-pointer hover:border-primary transition-colors"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Migrate User Database</p>
+<div class="flex items-center gap-3 mt-1">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#fef9c3] text-[#854d0e] uppercase tracking-wider">In Progress</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#fee2e2] text-[#991b1b] uppercase tracking-wider">High Priority</span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> Nov 05</span>
+</div>
+</div>
+</div>
+<img class="w-8 h-8 rounded-full object-cover hidden sm:block" data-alt="Small round avatar of another team member." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4psxpfPilJVwiUHrbCr7g8jWCzYM5wcAsIdOOppdbbRwleCy1y83BjpQkwroGw8Xd8Y3vpRttFJoP1Ds-xktEvEWJMs1-2Vx5TAFfxL5qM-0xRHNw8rhCM4CLBE_pb6VimNYARynpOztA4X99FXXCrzTVM99YN4WHQX3h4WWy0tnKUdz4km6oMBOabV8H0tlUjon2RAEreFBQV878QYjqQ6UJ5ol-8f5ZrRQcS71_kLNz1Nobm76L"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

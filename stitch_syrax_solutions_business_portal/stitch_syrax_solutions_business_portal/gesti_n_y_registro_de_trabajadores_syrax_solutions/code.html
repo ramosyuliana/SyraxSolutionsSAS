@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#f8fafc]" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestión de Trabajadores | Syrax Admin</title>
+<!-- Google Fonts: Inter & Sora -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#004d73',
+              dark: '#003354'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Sora', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scrollbars">
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+<style data-purpose="typography-adjustments">
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Sora', sans-serif;
+    }
+  </style>
+</head>
+<body class="h-full antialiased text-slate-800 bg-[#f8fafc] flex overflow-hidden">
+<!-- BEGIN: Sidebar -->
+<aside class="w-64 bg-white border-r border-slate-200/80 flex flex-col justify-between shrink-0 select-none z-20" data-purpose="main-sidebar">
+<!-- Top Branding & Navigation Area -->
+<div class="flex flex-col h-full overflow-y-auto">
+<!-- Enterprise Brand Header -->
+<div class="px-6 py-6 border-b border-slate-100 flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-600 to-brand-900 flex items-center justify-center shadow-sm overflow-hidden p-1 shrink-0">
+<img alt="Syrax Solutions Logo" class="w-full h-full object-contain filter brightness-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJxeQSiYU4RWRmrCm1ifA0d-NRgUVkgTAIx2rK85960jWdM29HmWTPEgrRiRk3UV3MRU7dAqE-D57KRY9fdCm0f8hEUAPb8I7fgFfTxmndI4933STaCsevJiQXzG5p2RmEeVIUvZW0duggcArCly_qRmVcI34wwh9Zq31MmQ8daMS2K7GqIwl-lOgn2eDRLb79_RNxjyk8zdLdHG-LpCmu9zEC5P7590ZbZo86nCFJ1DmcylZDGPSbXdAMqLfTQNxm2w"/>
+</div>
+<div class="flex flex-col">
+<span class="font-heading font-bold text-slate-900 text-lg leading-tight tracking-tight">Syrax Admin</span>
+<span class="text-[11px] text-slate-400 font-medium tracking-wide uppercase">Enterprise Suite</span>
+</div>
+</div>
+<!-- Main Navigation Menu -->
+<nav aria-label="Menú principal" class="px-4 py-4 space-y-1">
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">group</span>
+<span>Clientes</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">assignment_turned_in</span>
+<span>Solicitudes</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">account_tree</span>
+<span>Proyectos</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">check_box</span>
+<span>Tareas</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">layers</span>
+<span>Servicios</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">headset_mic</span>
+<span>Soporte</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">build</span>
+<span>Mantenimiento</span>
+</a>
+<!-- Active Menu Item: Usuarios / Trabajadores -->
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-2xl bg-[#0ea5e9] text-white text-sm font-medium shadow-md shadow-sky-500/20 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px] text-white">person</span>
+<span>Usuarios</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">bar_chart</span>
+<span>Reportes</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">notifications</span>
+<span>Notificaciones</span>
+</a>
+<a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] text-slate-400">settings</span>
+<span>Configuración</span>
+</a>
+</nav>
+</div>
+<!-- Bottom Action Area -->
+<div class="p-4 border-t border-slate-100">
+<button class="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-slate-600 hover:text-rose-600 hover:bg-rose-50 text-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-[20px] rotate-180 text-slate-400 group-hover:text-rose-600">logout</span>
+<span>Cerrar Sesión</span>
+</button>
+</div>
+</aside>
+<!-- END: Sidebar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto" id="main-content">
+<div class="max-w-[1360px] w-full mx-auto px-8 py-8 space-y-6">
+<!-- Top Action Bar Header -->
+<header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div>
+<h1 class="text-3xl font-bold text-slate-900 tracking-tight">Gestión de Trabajadores</h1>
+<p class="text-sm text-slate-500 mt-1">Administración, consulta y registro del equipo técnico y administrativo de Syrax Solutions.</p>
+</div>
+<div>
+<!-- Botón Registrar Trabajador -->
+<button class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#004d73] hover:bg-[#003854] text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all" onclick="toggleRegisterModal(true)">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Registrar Trabajador</span>
+</button>
+</div>
+</header>
+<!-- Search & Filters Toolbar Bar -->
+<section class="bg-white rounded-full p-2.5 shadow-sm border border-slate-200/70 flex flex-col sm:flex-row items-center justify-between gap-3" data-purpose="search-and-filters">
+<!-- Search Input -->
+<div class="relative flex-1 w-full sm:w-auto">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full pl-11 pr-4 py-2 bg-slate-50/80 hover:bg-slate-100/70 focus:bg-white border-none rounded-full text-xs md:text-sm text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-sky-400 transition" placeholder="Buscar por nombre, documento o cargo..." type="text"/>
+</div>
+<!-- Filter Action Pills -->
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end px-2">
+<!-- Status Selector -->
+<div class="relative">
+<select class="appearance-none bg-sky-500 hover:bg-sky-600 text-white font-medium text-xs rounded-full pl-4 pr-9 py-2 border-none focus:ring-2 focus:ring-sky-400 cursor-pointer shadow-sm">
+<option value="all">Todos los Estados</option>
+<option value="active">Activo</option>
+<option value="vacation">En Vacaciones</option>
+<option value="inactive">Inactivo</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-white pointer-events-none text-base">expand_more</span>
+</div>
+<!-- Role / Department Selector -->
+<div class="relative">
+<select class="appearance-none bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-xs rounded-full pl-4 pr-9 py-2 border-none focus:ring-2 focus:ring-sky-400 cursor-pointer">
+<option value="all">Todos los Cargos</option>
+<option value="dev">Desarrollo Software</option>
+<option value="cloud">Infraestructura &amp; Cloud</option>
+<option value="support">Soporte Técnico</option>
+<option value="admin">Administración</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-600 pointer-events-none text-base">expand_more</span>
+</div>
+<!-- Advanced Filters Button -->
+<button class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition" title="Más filtros">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</button>
+</div>
+</section>
+<!-- BEGIN: Workers Table Container -->
+<section class="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden" data-purpose="workers-table">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-slate-100 text-[11px] font-bold text-slate-500 uppercase tracking-wider bg-slate-50/50">
+<th class="py-4 pl-6 pr-3" scope="col">Colaborador</th>
+<th class="py-4 px-3" scope="col">Documento</th>
+<th class="py-4 px-3" scope="col">Contacto</th>
+<th class="py-4 px-3" scope="col">Dirección</th>
+<th class="py-4 px-3" scope="col">Cargo / Rol</th>
+<th class="py-4 px-3 text-center" scope="col">Estado</th>
+<th class="py-4 pl-3 pr-6 text-right" scope="col">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 text-sm">
+<!-- Worker 1 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-4 pl-6 pr-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 font-bold flex items-center justify-center text-sm">
+                      CM
+                    </div>
+<div>
+<div class="font-semibold text-slate-900">Carlos Mendoza Gómez</div>
+<div class="text-xs text-slate-400">carlos.mendoza@syrax.co</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600">
+<span class="font-medium text-slate-800">CC</span> 1.020.485.921
+                </td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">phone</span>
+                    +57 312 458 9021
+                  </div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600 max-w-[160px] truncate" title="Cra. 43A # 18 Sur-35, Medellín">
+                  Cra. 43A # 18 Sur-35, Medellín
+                </td>
+<td class="py-4 px-3 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+                    Tech Lead / Senior Fullstack
+                  </span>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200/60">
+                    Activo
+                  </span>
+</td>
+<td class="py-4 pl-3 pr-6 whitespace-nowrap text-right text-xs">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 text-slate-400 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition" title="Editar">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition" title="Restablecer Clave">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">person_off</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Worker 2 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-4 pl-6 pr-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-sm">
+                      AS
+                    </div>
+<div>
+<div class="font-semibold text-slate-900">Andrea Silva Cárdenas</div>
+<div class="text-xs text-slate-400">andrea.silva@syrax.co</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600">
+<span class="font-medium text-slate-800">CC</span> 52.849.123
+                </td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">phone</span>
+                    +57 300 892 4110
+                  </div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600 max-w-[160px] truncate" title="Calle 100 # 15-20 Of. 402, Bogotá">
+                  Calle 100 # 15-20, Bogotá
+                </td>
+<td class="py-4 px-3 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+                    Consultora Cloud &amp; DevOps
+                  </span>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200/60">
+                    Activo
+                  </span>
+</td>
+<td class="py-4 pl-3 pr-6 whitespace-nowrap text-right text-xs">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 text-slate-400 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition" title="Editar">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition" title="Restablecer Clave">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition" title="Desactivar">
+<span class="material-symbols-outlined text-[18px]">person_off</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Worker 3 -->
+<tr class="hover:bg-slate-50/70 transition-colors">
+<td class="py-4 pl-6 pr-3 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">
+                      MR
+                    </div>
+<div>
+<div class="font-semibold text-slate-900">Mateo Rodríguez Parra</div>
+<div class="text-xs text-slate-400">mateo.rodriguez@syrax.co</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600">
+<span class="font-medium text-slate-800">CE</span> 492.301.884
+                </td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">phone</span>
+                    +57 318 672 3341
+                  </div>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-xs text-slate-600 max-w-[160px] truncate" title="Av. Circunvalar # 7-14, Manizales">
+                  Av. Circunvalar # 7-14, Manizales
+                </td>
+<td class="py-4 px-3 whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+                    Especialista en Soporte L2
+                  </span>
+</td>
+<td class="py-4 px-3 whitespace-nowrap text-center">
+<span class="inline-flex items-center px-3 py-0.5 rounded-full text-[11px] font-semibold bg-rose-50 text-rose-600 border border-rose-200/60">
+                    Inactivo
+                  </span>
+</td>
+<td class="py-4 pl-3 pr-6 whitespace-nowrap text-right text-xs">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 text-slate-400 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition" title="Editar">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition" title="Restablecer Clave">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+</button>
+<button class="p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition" title="Reactivar">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-6 py-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+<div>
+            Mostrando <span class="font-semibold text-slate-800">1</span> a <span class="font-semibold text-slate-800">3</span> de <span class="font-semibold text-slate-800">18</span> trabajadores
+          </div>
+<div class="inline-flex items-center gap-1.5">
+<button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-slate-50 transition" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-[#004d73] text-white font-medium flex items-center justify-center shadow-sm">
+              1
+            </button>
+<button class="w-8 h-8 rounded-full hover:bg-slate-100 text-slate-600 font-medium flex items-center justify-center transition">
+              2
+            </button>
+<button class="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 transition">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- END: Workers Table Container -->
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: Modal Registro de Trabajador -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 transition-opacity duration-200 hidden" id="register-worker-modal" role="dialog">
+<div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-100 overflow-hidden transform transition-all flex flex-col max-h-[92vh]">
+<!-- Modal Header -->
+<div class="px-7 py-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-sky-500/10 text-sky-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<h3 class="font-heading text-lg font-bold text-slate-900" id="modal-title">Registrar Nuevo Trabajador</h3>
+<p class="text-xs text-slate-500">Completa la información corporativa y credenciales de acceso</p>
+</div>
+</div>
+<button class="text-slate-400 hover:text-slate-600 p-2 rounded-full hover:bg-slate-100 transition" onclick="toggleRegisterModal(false)">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Form Fields) -->
+<form class="overflow-y-auto px-7 py-6 space-y-5" id="worker-form" onsubmit="handleFormSubmit(event)">
+<!-- Document Section -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="doc_type">
+              Tipo de Documento <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="doc_type" required="">
+<option disabled="" selected="" value="">Seleccione tipo...</option>
+<option value="CC">Cédula de Ciudadanía (CC)</option>
+<option value="CE">Cédula de Extranjería (CE)</option>
+<option value="PASSPORT">Pasaporte</option>
+<option value="NIT">NIT / Registro Mercantil</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="doc_number">
+              Número de Documento <span class="text-rose-500">*</span>
+</label>
+<input class="w-full bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="doc_number" placeholder="Ej: 1020345678" required="" type="text"/>
+</div>
+</div>
+<!-- Names Section -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="first_names">
+              Nombres <span class="text-rose-500">*</span>
+</label>
+<input class="w-full bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="first_names" placeholder="Ej: Laura Sofía" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="last_names">
+              Apellidos <span class="text-rose-500">*</span>
+</label>
+<input class="w-full bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="last_names" placeholder="Ej: Vargas Navarro" required="" type="text"/>
+</div>
+</div>
+<!-- Contact Section -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="email">
+              Correo Electrónico <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="email" placeholder="colaborador@syrax.co" required="" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="phone">
+              Teléfono / Celular <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">call</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="phone" placeholder="+57 300 000 0000" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Address Section -->
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="address">
+            Dirección Residencial <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">home_pin</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="address" placeholder="Ej: Carrera 15 # 85-30 Torre 2 Apt 401, Bogotá" required="" type="text"/>
+</div>
+</div>
+<!-- Role & Password Section -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="role">
+              Rol / Cargo Asignado <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl px-4 py-2.5 text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="role" required="">
+<option disabled="" selected="" value="">Seleccione cargo...</option>
+<option value="lead">Tech Lead / Arquitecto</option>
+<option value="dev">Desarrollador Senior</option>
+<option value="cloud">Consultor Cloud &amp; DevOps</option>
+<option value="support">Soporte Técnico Especializado</option>
+<option value="admin">Administrador del Sistema</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="password">
+              Clave / Contraseña Inicial <span class="text-rose-500">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">lock</span>
+<input class="w-full pl-10 pr-10 py-2.5 bg-slate-50 hover:bg-slate-100/60 focus:bg-white border border-slate-200 rounded-2xl text-xs sm:text-sm text-slate-800 focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition" id="password" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 focus:outline-none" onclick="togglePasswordVisibility('password')" type="button">
+<span class="material-symbols-outlined text-[18px]" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Form Action Buttons -->
+<div class="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+<button class="px-5 py-2.5 rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs sm:text-sm font-semibold transition" onclick="toggleRegisterModal(false)" type="button">
+            Cancelar
+          </button>
+<button class="px-6 py-2.5 rounded-full bg-[#004d73] hover:bg-[#003854] text-white text-xs sm:text-sm font-semibold shadow-md shadow-sky-900/10 transition" type="submit">
+            Guardar Trabajador
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- END: Modal Registro de Trabajador -->
+<!-- BEGIN: UI Interactivity Scripts -->
+<script data-purpose="modal-and-form-handlers">
+    // Función para abrir/cerrar el modal de registro
+    function toggleRegisterModal(show) {
+      const modal = document.getElementById('register-worker-modal');
+      if (show) {
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      } else {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+
+    // Alternar visibilidad de contraseña
+    function togglePasswordVisibility(fieldId) {
+      const field = document.getElementById(fieldId);
+      const icon = document.getElementById('password-toggle-icon');
+      if (field.type === 'password') {
+        field.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        field.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    }
+
+    // Manejo de envío simulado de formulario
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      alert('¡Trabajador registrado exitosamente en Syrax Solutions!');
+      toggleRegisterModal(false);
+      document.getElementById('worker-form').reset();
+    }
+  </script>
+<!-- END: UI Interactivity Scripts -->
+</body></html>

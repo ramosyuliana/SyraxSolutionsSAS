@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Syrax Admin - Soporte</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#3e4850",
+                        "primary": "#006591",
+                        "tertiary-fixed": "#d8e3fb",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#293446",
+                        "surface-tint": "#006591",
+                        "on-primary-fixed-variant": "#004c6e",
+                        "on-primary-container": "#003751",
+                        "tertiary": "#545f73",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary": "#006877",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-primary": "#89ceff",
+                        "on-secondary-container": "#00616f",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "surface-bright": "#f7f9fb",
+                        "primary-container": "#0ea5e9",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#111c2d",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#a2eeff",
+                        "surface-container": "#eceef0",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#3fe1fd",
+                        "primary-fixed": "#c9e6ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "error-container": "#ffdad6",
+                        "outline": "#6e7881",
+                        "on-primary-fixed": "#001e2f",
+                        "outline-variant": "#bec8d2",
+                        "tertiary-container": "#919cb2",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#89ceff",
+                        "on-secondary-fixed": "#001f25"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "max-width": "1280px",
+                        "unit": "4px",
+                        "xxl": "64px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Hanken Grotesk"],
+                        "caption": ["Hanken Grotesk"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f7f9fb; }
+        .shadow-natural { box-shadow: 0 20px 40px 0 hsla(210,20%,30%,0.05); }
+    </style>
+</head>
+<body class="text-on-background font-body-md bg-background flex">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-surface-container-lowest border-r border-outline-variant flex flex-col py-md gap-xs hidden md:flex z-50">
+<div class="px-lg mb-md flex items-center gap-md">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-weight="fill">token</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Syrax Admin</h1>
+<p class="font-caption text-caption text-on-surface-variant">Enterprise Management</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-xs">
+<!-- Tabs -->
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Clientes</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Solicitudes</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-md text-label-md">Proyectos</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">task</span>
+<span class="font-label-md text-label-md">Tareas</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-md text-label-md">Servicios</span>
+</a>
+<!-- Active Tab: Soporte -->
+<a class="flex items-center gap-md py-sm px-md bg-primary-container text-on-primary-container rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="font-label-md text-label-md">Soporte</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">handyman</span>
+<span class="font-label-md text-label-md">Mantenimiento</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Usuarios</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-md text-label-md">Reportes</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Notificaciones</span>
+</a>
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Configuración</span>
+</a>
+</div>
+<div class="mt-auto px-xs pb-md border-t border-outline-variant/30 pt-sm">
+<a class="flex items-center gap-md py-sm px-md text-on-surface-variant hover:bg-surface-container-low rounded-full mx-2 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Cerrar Sesión</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<main class="flex-1 md:ml-64 min-h-screen flex flex-col">
+<!-- Mobile TopAppBar (Hidden on MD+) -->
+<header class="bg-surface-container-lowest shadow-sm shadow-[0_20px_40px_0_hsla(210,20%,30%,0.05)] sticky top-0 z-40 flex justify-between items-center w-full px-margin h-16 md:hidden">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Syrax Solutions</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate user, modern soft lighting, soft high-key aesthetic, clear focus, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChyybl9NMo3qHsMdBs8OocCfOh44FmdNUPRwmH56CfGjPTvf3H8DM1hGSpUsB6DltpiWzdNZbtvMjPzfZ-c69dMjhQb7N-xOWWPZZ-1uLwMgXQN3S4ngSJNqi896OlZdip7L7qhRQISl4MZ8YL2zNNdy5tqJXj68ChaGuQoz3TLqyidXuxQE0CH7YNSc7944nv0bhLyFm1PKm-rK4Wdxem3hIs95Kt5z5xgxMQxdQF_ihwACo_JyCp"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-lg md:p-xl flex-1 flex flex-col h-[calc(100vh-64px)] md:h-screen max-w-max-width mx-auto w-full">
+<div class="flex justify-between items-center mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Soporte al Cliente</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm">Gestiona tickets de ayuda y comunícate con el equipo de soporte.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-sm px-xl rounded-full hover:bg-on-primary-container transition-colors shadow-natural flex items-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Open New Ticket
+                </button>
+</div>
+<!-- Bento Layout for Tickets & Chat -->
+<div class="flex flex-col lg:flex-row gap-gutter flex-1 min-h-0">
+<!-- Ticket List -->
+<div class="w-full lg:w-1/3 bg-surface-container-lowest rounded-xl shadow-natural flex flex-col h-[400px] lg:h-auto overflow-hidden">
+<div class="p-md border-b border-surface-container-highest flex justify-between items-center bg-surface-container-lowest z-10">
+<h3 class="font-label-md text-label-md text-on-surface">Tickets Activos</h3>
+<span class="bg-surface-container-high text-on-surface-variant px-sm py-xs rounded-full font-caption text-caption">3 Open</span>
+</div>
+<div class="flex-1 overflow-y-auto p-sm flex flex-col gap-sm">
+<!-- Ticket Item 1 (Selected) -->
+<div class="p-md rounded-lg bg-surface-container-low border border-primary/20 cursor-pointer transition-colors relative">
+<div class="flex justify-between items-start mb-sm">
+<span class="font-caption text-caption text-on-surface-variant">#SRX-8901</span>
+<span class="bg-[#ecfdf5] text-[#065f46] px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-bold">In Progress</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">API Integration Issue</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">We are having trouble connecting to the staging environment endpoints...</p>
+</div>
+<!-- Ticket Item 2 -->
+<div class="p-md rounded-lg hover:bg-surface-container-low border border-transparent cursor-pointer transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<span class="font-caption text-caption text-on-surface-variant">#SRX-8894</span>
+<span class="bg-[#fffbeb] text-[#92400e] px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-bold">Pending Info</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">Billing Statement Request</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Could you please send the Q3 invoices?</p>
+</div>
+<!-- Ticket Item 3 -->
+<div class="p-md rounded-lg hover:bg-surface-container-low border border-transparent cursor-pointer transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<span class="font-caption text-caption text-on-surface-variant">#SRX-8850</span>
+<span class="bg-[#f8fafc] text-[#475569] px-2 py-0.5 rounded-full font-caption text-[10px] uppercase tracking-wider font-bold">Closed</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-xs">Password Reset Loop</h4>
+<p class="font-caption text-caption text-on-surface-variant line-clamp-1">Resolved: Cleared cache and verified SSO config.</p>
+</div>
+</div>
+</div>
+<!-- Chat Interface -->
+<div class="w-full lg:w-2/3 bg-surface-container-lowest rounded-xl shadow-natural flex flex-col h-[500px] lg:h-auto overflow-hidden">
+<!-- Chat Header -->
+<div class="p-md lg:p-lg border-b border-surface-container-highest flex justify-between items-center bg-surface-container-lowest z-10">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-caption text-caption text-primary">#SRX-8901</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-caption text-caption text-on-surface-variant">Last updated 2h ago</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">API Integration Issue</h3>
+</div>
+<div class="flex items-center gap-sm">
+<img class="w-8 h-8 rounded-full object-cover shadow-sm" data-alt="A tiny circular profile picture of an IT support agent, bright blue background, friendly expression, modern soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEQXY4Wnggr5-DbmCOJuWIay72gD4WZ1pRV9hpD40F0RVDfT73qasx-HOFu52-o76G1y5FzaMHkr3TAgeFJvBVlpUO728ezdYuDc11pNHxKyCg053P1EgD9ldBJ6BRE0cKslKQUnCOHYOB6nL6O0NRkVNF5ONaSuyUHhOr6TAoNniDJ891uz9AuBwMpjyX4r10RVlz4-mjGdYbZmBpyqs_NpInF09-XvMQrF8bn6nbE2kh4Gwo5Qje"/>
+<span class="font-label-md text-label-md text-on-surface hidden md:block">Agent Sarah</span>
+</div>
+</div>
+<!-- Chat Messages -->
+<div class="flex-1 overflow-y-auto p-md lg:p-lg flex flex-col gap-lg bg-[#f8fafc]">
+<!-- Client Message -->
+<div class="flex justify-end">
+<div class="max-w-[80%] md:max-w-[70%]">
+<div class="bg-primary text-on-primary rounded-2xl rounded-tr-sm p-md shadow-sm">
+<p class="font-body-md text-body-md">Hi team, we are trying to hit the `/v2/users` endpoint on staging but we keep getting a 403 Forbidden error since this morning's update. Any ideas?</p>
+</div>
+<div class="text-right mt-xs">
+<span class="font-caption text-caption text-on-surface-variant">You • 10:23 AM</span>
+</div>
+</div>
+</div>
+<!-- Agent Message -->
+<div class="flex justify-start">
+<div class="flex items-end gap-sm max-w-[80%] md:max-w-[70%]">
+<img class="w-6 h-6 rounded-full object-cover mb-6" data-alt="A small circular profile picture of an IT support agent, bright blue background, friendly expression, modern soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiokHviGHILdTJVryBaOHxAQ1Wz7_TQ1Qwn68p9RYi8QWuJD6D6ME_vuMuv4OlW8pXO89Rdiy-R1pgwz0GYr4OkKfPyOdiuzKqvArzP-Ap9BtAuTQoB4cYR1A56iKDQKjsb3Rchhg4tDdKJmT7RJnO72h9bhMcsLZ0AEqtfB9DakkvIavjEEY_ee8r3Lu8iD0C8RubMeETkYMJOlNb72Cz_jZ75lG_WE4ERI_tGTsGwuEehTcqHn5z"/>
+<div>
+<div class="bg-surface-container-lowest border border-surface-container-highest text-on-surface rounded-2xl rounded-tl-sm p-md shadow-sm">
+<p class="font-body-md text-body-md mb-sm">Hello! Thanks for reaching out. We deployed a new security patch to staging earlier today that requires an updated API key format.</p>
+<p class="font-body-md text-body-md mb-sm">Could you please verify if you are using the new `sk_test_v2_...` format?</p>
+<!-- Attachment -->
+<div class="mt-md p-sm bg-surface-container-low rounded-lg flex items-center gap-md border border-outline-variant/30 cursor-pointer hover:bg-surface-container-high transition-colors w-max">
+<div class="w-8 h-8 bg-surface-container-lowest rounded flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface text-[12px]">API_Migration_Guide.pdf</div>
+<div class="font-caption text-caption text-on-surface-variant text-[10px]">1.2 MB</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant ml-md">download</span>
+</div>
+</div>
+<div class="text-left mt-xs">
+<span class="font-caption text-caption text-on-surface-variant">Sarah • 10:45 AM</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-md lg:p-lg border-t border-surface-container-highest bg-surface-container-lowest z-10">
+<div class="relative flex items-end gap-sm">
+<button class="p-sm text-outline hover:text-primary transition-colors mb-1 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<div class="flex-1 bg-[#F1F5F9] rounded-xl border-2 border-transparent focus-within:border-primary focus-within:shadow-[0_0_0_4px_rgba(0,101,145,0.1)] transition-all flex items-center">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none py-sm px-md font-body-md text-body-md text-on-surface placeholder-outline-variant" placeholder="Type your message here..." rows="2"></textarea>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-on-primary-container transition-colors shadow-sm shrink-0 mb-1">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
